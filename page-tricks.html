@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SQL SandBox | Tricks</title>
+    <link rel="icon" type="image/x-icon" href="./title-icon.png">
+    <script src="jquery-3.6.0.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.7.2/dist/full.min.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="index.css">
+    <script>
+        const pageName = 'page-tricks';
+    </script>
+    <script src="index.js"></script>
+</head>
+
+<body class="container mx-auto mb-56">
+    <header class="sticky top-0 bg-white">
+        <div id="menuContainer"></div>
+    </header>
+
+    <main>
+        <!-- DB Size calculation -->
+        <section>
+            <h1>DB Size calculation</h1>
+            <div>
+                <p class="badge badge-primary">MySQL</p>
+                <pre>
+<code>
+    SELECT table_schema "DB Name", ROUND(SUM(data_length + index_length) / 1024 / 1024, 1) "DB Size in MB" 
+    FROM information_schema.tables 
+    GROUP BY table_schema; 
+
+    SELECT table_schema AS "Database", SUM(data_length + index_length) / 1024 / 1024 AS "Size (MB)" FROM information_schema.TABLES GROUP BY table_schema;
+</code>
+                </pre>
+            </div>
+            <div>
+                <img src="./image/tricks-1.png" alt="">
+            </div>
+        </section>
+
+        <!-- foreign key check disable -->
+        <section>
+            <h1>foreign key check disable</h1>
+            <div>
+                <p class="badge badge-primary">MySQL</p>
+                <pre>
+<code>
+    -- foreign key check disable
+    SET FOREIGN_KEY_CHECKS=0;
+    DELETE FROM functional_designation;
+    SET FOREIGN_KEY_CHECKS=1;
+</code>
+                </pre>
+            </div>
+        </section>
+
+        <!-- Find Duplicate Values -->
+        <section>
+            <h1>Find Duplicate Values</h1>
+            <div>
+                <p class="badge badge-primary">MySQL</p>
+                <pre>
+<code>
+    SELECT * FROM table_1 t1 
+    WHERE t1.field_1 = "condition-word"
+    GROUP BY t1.field_2
+    HAVING COUNT(*)>1;
+</code>
+                </pre>
+            </div>
+        </section>
+    </main>
+
+</body>
+
+</html>

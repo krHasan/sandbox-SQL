@@ -1,0 +1,79 @@
+/*=====================================
+        Default elements
+=====================================*/
+body {
+    width: 80%;
+    margin: auto;
+}
+
+div pre {
+    background-color: #F6F6F6;
+    margin: 5px 10px 20px 0;
+    border-radius: 5px;
+    overflow-x: auto;
+}
+
+h1 {
+    font-size: 1.5rem !important;
+    line-height: 2rem !important;
+    margin-top: 1.5rem !important;
+    margin-bottom: 0.5rem !important;
+    font-weight: bold !important;
+}
+
+h2 {
+    font-size: 1.25rem !important;
+    line-height: 1.75rem !important;
+    margin-top: 6px !important;
+    margin-bottom: 6px !important;
+    font-weight: bold !important;
+}
+
+h3 {
+    font-size: 1rem !important;
+    line-height: 1.5rem !important;
+    margin-top: .25rem !important;
+    margin-bottom: .25rem !important;
+    font-weight: bold !important;
+}
+
+h5 {
+    font-size: 1rem !important;
+    margin-top: .5rem !important;
+}
+
+
+/*=====================================
+        Menu
+=====================================*/
+.py-5 {
+    padding: 20px 0;
+}
+.btn {
+    text-decoration: none;
+    padding: 5px 10px;
+    margin: 0 5px;
+    border: 1px solid #3F00E7;
+    border-radius: 7px;
+}
+
+.btn-primary {
+    background-color: #3F00E7;
+    color: white;
+}
+
+.btn-outline {
+    background-color: white;
+    color: #3F00E7;
+}
+
+
+/*=====================================
+        For Mobile Specific
+=====================================*/
+@media screen and (max-width: 640px) {
+    body {
+        width: 95%;
+        margin: auto;
+    }
+}
